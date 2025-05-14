@@ -117,6 +117,8 @@ export async function fetchFilteredInvoices(
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
 
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
     return invoices;
   } catch (error) {
     console.error('Database Error:', error);
